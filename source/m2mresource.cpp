@@ -535,6 +535,7 @@ sn_coap_hdr_s* M2MResource::handle_post_request(nsdl_s *nsdl,
                     get_value(coap_response->payload_ptr, length);
                     coap_response->payload_len = length;
                 }
+                tr_debug("\n+post_callback,/%s/%u/%s,%.*s\n", object_name(), object_instance_id(), name(), received_coap_header->payload_len, received_coap_header->payload_ptr);
                 execute(exec_params);
             }
             delete exec_params;
